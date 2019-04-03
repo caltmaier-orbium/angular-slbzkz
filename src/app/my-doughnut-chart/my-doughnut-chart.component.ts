@@ -28,7 +28,8 @@ export class MyDoughnutChartComponent implements OnInit {
           yAxes: [{
             display: false
           }]
-        }
+        },
+        responsive: true
       };
   constructor() { }
   ngOnInit() {

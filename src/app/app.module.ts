@@ -16,6 +16,7 @@ import { MyTableComponent } from './my-table/my-table.component';
 import {DemoMaterialModule} from './material-module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { MyTableChartComponent } from './my-table-chart/my-table-chart.component';
+import { ChartComponent } from './chart/chart.component';
 
 const routes: Routes = [
   {path: 'bar-chart', component: MyBarChartComponent},
@@ -37,7 +38,7 @@ const routes: Routes = [
     ReactiveFormsModule,
     BrowserAnimationsModule,
      ],
-  declarations: [ AppComponent, HelloComponent, MyBarChartComponent, MyDoughnutChartComponent, MyTableComponent, MyTableChartComponent ],
+  declarations: [ AppComponent, HelloComponent, MyBarChartComponent, MyDoughnutChartComponent, MyTableComponent, MyTableChartComponent, ChartComponent ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
