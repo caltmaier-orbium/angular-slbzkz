@@ -5,14 +5,31 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./chart.component.css']
 })
 export class ChartComponent implements OnInit {
-  @Input() public chartType;
-  @Input() public chartLabels;
-  @Input() public chartLegendEnabled;
-  @Input() public chartData;
-  @Input() public chartOptions;
+
+@Input() public masterData: MasterDataChart;
+
+  public chartType;
+  public chartLabels;
+  public chartLegendEnabled;
+  public chartData;
+  public chartOptions;
 
   constructor() { }
-
+  
   ngOnInit() {
+    this.chartType = this.masterData.chartType;
+    this.chartLabels = this.masterData.chartLabels;
+    this.chartLegendEnabled = this.masterData.chartLegendEnabled;
+    this.chartData = this.masterData.chartData;
+    this.chartOptions = this.masterData.chartOptions;
   }
+}
+
+// Interface bauen
+export interface MasterDataChart {
+  chartType: string;
+  chartLabels: string[];
+  chartLegendEnabled: boolean;
+  chartData: string[];
+  chartOptions: any;    // quuickk&dirty
 }
