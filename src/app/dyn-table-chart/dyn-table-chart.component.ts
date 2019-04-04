@@ -3,8 +3,9 @@ import {MatSort, MatTableDataSource} from '@angular/material';
 import { MyDoughnutChartComponent } from '../my-doughnut-chart/my-doughnut-chart.component';
 import {MyBarChartComponent} from '../my-bar-chart/my-bar-chart.component';
 import {Chart} from 'chart.js';
-import {MasterDataChart} from '../models';
-import {PeriodicElementChartData} from '../models';
+import {MasterDataChart} from '../model/model.module';
+import {PeriodicElementChartData} from '../model/model.module';
+import {DataService} from '../data.service'
 
 const CHART_DATA: MasterDataChart = { 
   chartType: 'bar', 

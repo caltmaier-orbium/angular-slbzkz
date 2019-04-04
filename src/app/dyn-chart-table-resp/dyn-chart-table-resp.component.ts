@@ -1,68 +1,97 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
-import {MatSort, MatTableDataSource} from '@angular/material';
-import { MyDoughnutChartComponent } from '../my-doughnut-chart/my-doughnut-chart.component';
-import {MyBarChartComponent} from '../my-bar-chart/my-bar-chart.component';
-import {Chart} from 'chart.js';
-import {MasterDataChart} from '../chart/chart.component';
-import {PeriodicElementChartData} from '../models'
 
-const CHART_DATA: MasterDataChart = { 
-  chartType: 'bar', 
-  chartLabels: ['2006', '2007', '2008', '2009', '2010', '2011', '2012'], 
-  chartLegendEnabled: false, 
-  chartData:  [
-                {data: [65, 59, 80, 81, 56, 55, 40], label: 'Series A'},
-                {data: [28, 48, 40, 19, 86, 27, 90], label: 'Series B'}
-              ],
-  chartOptions: { scaleShowVerticalLines: false,
-                  responsive: true }
-};
 
-const CHART_DATA1: MasterDataChart = { 
-  chartType: 'doughnut', 
-  chartLabels: ['2006', '2007', '2008', '2009', '2010', '2011', '2012'], 
-  chartLegendEnabled: false, 
-  chartData:  [
-                {data: [65, 59, 80, 81, 56, 55, 40], label: 'Test1'},
-                {data: [28, 48, 40, 19, 86, 27, 90], label: 'Test2'}
-              ],
-  chartOptions: { scaleShowVerticalLines: false,
-                  responsive: true }
-};
 
-const CHART_DATA2: MasterDataChart = { 
-  chartType: 'pie', 
-  chartLabels: ['2006', '2007', '2008', '2009'], 
-  chartLegendEnabled: false, 
-  chartData:  [
-                {data: [65, 59, 80, 81]}
-              ],
-  chartOptions: { scaleShowVerticalLines: false,
-                  responsive: true }
-};
+//https://plnkr.co/edit/0cBlzrgB16IpRaHNifYS?p=preview
 
-const ELEMENT_DATA: PeriodicElementChartData[] = [
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H', chartData: CHART_DATA},
-  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He', chartData: CHART_DATA1},
-  {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li', chartData: CHART_DATA2}
-];
+import { Component, ViewChild } from '@angular/core';
+import { SimpleNotificationsComponent } from 'angular2-notifications';
+import { NotificationsService } from 'angular2-notifications';
+import {MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
 
 @Component({
   selector: 'app-dyn-chart-table-resp',
   templateUrl: './dyn-chart-table-resp.component.html',
   styleUrls: ['./dyn-chart-table-resp.component.css']
 })
-export class DynChartTableRespComponent implements OnInit {
+export class DynChartTableRespComponent  {
+  name = 'Angular 5';
+  options={
+      timeOut: 3000,
+      showProgressBar: true,
+      pauseOnHover: true,
+      clickToClose: true
+    };
+constructor( private _service: NotificationsService ) {
+      // Create 100 users
+    const users: UserData[] = [];
+    var users1=[];
+    for (let i = 1; i <= 100; i++) { /*users.push(createNewUser(i));*/
+    
+      users1.push({"cnt" : i,"name":"batr"+i});
+      
+     }
 
-  public dataForChart = CHART_DATA;
-
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol', 'chart'];
-  dataSource = new MatTableDataSource(ELEMENT_DATA);
-
-  @ViewChild(MatSort, {static: true}) sort: MatSort;
-
-  ngOnInit() {
+    // Assign the data to the data source for the table to render
+    this.dataSource = new MatTableDataSource(users1);
+}
+ 
+   ngAfterViewInit() {
+    this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
   }
+
+  ngOnInit(){
+  this._service.success('nat','dndnnd',this.options);
+}
+
+displayedColumns = ['id', 'name', 'progress', 'color'];
+  dataSource: MatTableDataSource<UserData>;
+
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatSort) sort: MatSort;
+
+   applyFilter(filterValue: string) {
+    filterValue = filterValue.trim(); // Remove whitespace
+    filterValue = filterValue.toLowerCase(); // Datasource defaults to lowercase matches
+    this.dataSource.filter = filterValue;
+  }
+ 
+ addbut(){
+   window.alert("addbutton");
+ }
+ editbut(){
+   window.alert("editbutton");
+ }
+
+
+}
+
+
+/** Builds and returns a new User. */
+function createNewUser(id: number): UserData {
+  const name =
+      NAMES[Math.round(Math.random() * (NAMES.length - 1))] + ' ' +
+      NAMES[Math.round(Math.random() * (NAMES.length - 1))].charAt(0) + '.';
+
+  return {
+    id: id.toString(),
+    name: name,
+    progress: Math.round(Math.random() * 100).toString(),
+    color: COLORS[Math.round(Math.random() * (COLORS.length - 1))]
+  };
+}
+
+/** Constants used to fill up our data base. */
+const COLORS = ['maroon', 'red', 'orange', 'yellow', 'olive', 'green', 'purple',
+  'fuchsia', 'lime', 'teal', 'aqua', 'blue', 'navy', 'black', 'gray'];
+const NAMES = ['Maia', 'Asher', 'Olivia', 'Atticus', 'Amelia', 'Jack',
+  'Charlotte', 'Theodore', 'Isla', 'Oliver', 'Isabella', 'Jasper',
+  'Cora', 'Levi', 'Violet', 'Arthur', 'Mia', 'Thomas', 'Elizabeth'];
+
+export interface UserData {
+  id: string;
+  name: string;
+  progress: string;
+  color: string;
 }
 

@@ -22,11 +22,11 @@
     <th mat-header-cell *matHeaderCellDef mat-sort-header> Symbol </th>
     <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
   </ng-container>
-  
+
   <!-- Symbol Column -->
   <ng-container matColumnDef="chart">
     <th mat-header-cell *matHeaderCellDef mat-sort-header> Chart </th>
-    <td mat-cell *matCellDef="let element">
+    <td style="background-color: gray" mat-cell *matCellDef="let element">
       <div class="chartWrapperTd">
         <app-chart [masterData]="element.chartData"></app-chart>
       </div>

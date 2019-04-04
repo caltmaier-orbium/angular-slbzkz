@@ -19,6 +19,9 @@ import { MyTableChartComponent } from './my-table-chart/my-table-chart.component
 import { ChartComponent } from './chart/chart.component';
 import { DynTableChartComponent } from './dyn-table-chart/dyn-table-chart.component';
 import { DynChartTableRespComponent } from './dyn-chart-table-resp/dyn-chart-table-resp.component';
+import { SimpleNotificationsModule } from 'angular2-notifications';
+import { DataService } from './data.service';
+
 
 const routes: Routes = [
   {path: 'bar-chart', component: MyBarChartComponent},
@@ -39,8 +42,10 @@ const routes: Routes = [
     MatNativeDateModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
+    SimpleNotificationsModule.forRoot()
      ],
   declarations: [ AppComponent, HelloComponent, MyBarChartComponent, MyDoughnutChartComponent, MyTableComponent, MyTableChartComponent, ChartComponent, DynTableChartComponent, DynChartTableRespComponent ],
-  bootstrap:    [ AppComponent ]
+  bootstrap:    [ AppComponent ],
+  providers: [DataService]
 })
 export class AppModule { }

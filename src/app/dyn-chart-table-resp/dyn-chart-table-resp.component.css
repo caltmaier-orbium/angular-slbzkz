@@ -1,3 +1,13 @@
+
+
+
+body {
+  font-family: 'Covered By Your Grace', cursive;
+  line-height: 1.25;
+  
+}
+
+
 @media screen and (max-width: 960px) {
   .mat-table {
     border: 0;
@@ -55,11 +65,4 @@
     .mat-table .mat-cell:first-child {
     margin-top: 4%;
   }
-}
-
-.chartWrapperTd {
-  width: 55%;
-  height: 65%;
-  padding-top: 1em;
-  padding-bottom: 1em;
 }

@@ -3,8 +3,8 @@ import {MatSort, MatTableDataSource} from '@angular/material';
 import { MyDoughnutChartComponent } from '../my-doughnut-chart/my-doughnut-chart.component';
 import {MyBarChartComponent} from '../my-bar-chart/my-bar-chart.component';
 import {Chart} from 'chart.js';
-import {MasterDataChart} from '../models';
-import {PeriodicElementChart} from '../models';
+import {MasterDataChart} from '../model/model.module';
+import {PeriodicElementChart} from '../model/model.module';
 
 const ELEMENT_DATA: PeriodicElementChart[] = [
   {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H', chart: MyDoughnutChartComponent},

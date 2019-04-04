@@ -23,8 +23,8 @@ body {
 }
 
 .chartWrapperTd {
-  width: 55%;
-  height: 65%;
-  padding-top: 1em;
-  padding-bottom: 1em;
+  width: 75%;
+  height: 75%;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
 }
