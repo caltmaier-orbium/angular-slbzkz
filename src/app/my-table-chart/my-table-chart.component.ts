@@ -3,6 +3,7 @@ import {MatSort, MatTableDataSource} from '@angular/material';
 import { MyDoughnutChartComponent } from '../my-doughnut-chart/my-doughnut-chart.component';
 import {MyBarChartComponent} from '../my-bar-chart/my-bar-chart.component';
 import {Chart} from 'chart.js';
+import {MasterDataChart} from '../chart/chart.component';
 
 export interface PeriodicElement {
   name: string;
@@ -11,6 +12,14 @@ export interface PeriodicElement {
   symbol: string;
   chart: Chart;
 }
+/*
+export interface MasterDataChart {
+  chartType: string;
+  chartLabels: string[];
+  chartLegendEnabled: boolean;
+  chartData: any;
+  chartOptions: any;    // quuickk&dirty
+} */
 
 const ELEMENT_DATA: PeriodicElement[] = [
   {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H', chart: MyDoughnutChartComponent},
@@ -24,6 +33,18 @@ const ELEMENT_DATA: PeriodicElement[] = [
   {position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F'},
   {position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne'}, */
 ];
+
+const CHART_DATA: MasterDataChart = { 
+  chartType: 'bar', 
+  chartLabels: ['2006', '2007', '2008', '2009', '2010', '2011', '2012'], 
+  chartLegendEnabled: false, 
+  chartData:  [
+                {data: [65, 59, 80, 81, 56, 55, 40], label: 'Series A'},
+                {data: [28, 48, 40, 19, 86, 27, 90], label: 'Series B'}
+              ],
+  chartOptions: { scaleShowVerticalLines: false,
+                  responsive: true }
+};
 
 @Component({
   selector: 'app-my-table-chart',

@@ -13,8 +13,6 @@ export class ChartComponent implements OnInit {
   public chartLegendEnabled;
   public chartData;
   public chartOptions;
-
-  constructor() { }
   
   ngOnInit() {
     this.chartType = this.masterData.chartType;
@@ -30,6 +28,6 @@ export interface MasterDataChart {
   chartType: string;
   chartLabels: string[];
   chartLegendEnabled: boolean;
-  chartData: string[];
+  chartData: any [];
   chartOptions: any;    // quuickk&dirty
 }
