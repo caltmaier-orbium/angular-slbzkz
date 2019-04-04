@@ -56,3 +56,10 @@
     margin-top: 4%;
   }
 }
+
+.chartWrapperTd {
+  width: 55%;
+  height: 65%;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}

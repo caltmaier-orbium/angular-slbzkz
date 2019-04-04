@@ -4,7 +4,7 @@ import { MyDoughnutChartComponent } from '../my-doughnut-chart/my-doughnut-chart
 import {MyBarChartComponent} from '../my-bar-chart/my-bar-chart.component';
 import {Chart} from 'chart.js';
 import {MasterDataChart} from '../chart/chart.component';
-import {PeriodicElement} from '../models'
+import {PeriodicElementChartData} from '../models'
 
 const CHART_DATA: MasterDataChart = { 
   chartType: 'bar', 
@@ -41,12 +41,11 @@ const CHART_DATA2: MasterDataChart = {
                   responsive: true }
 };
 
-const ELEMENT_DATA: PeriodicElement[] = [
+const ELEMENT_DATA: PeriodicElementChartData[] = [
   {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H', chartData: CHART_DATA},
   {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He', chartData: CHART_DATA1},
   {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li', chartData: CHART_DATA2}
 ];
-
 
 @Component({
   selector: 'app-dyn-chart-table-resp',
