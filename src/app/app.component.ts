@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import {ElementRef,Renderer2, ViewChild} from '@angular/core';
 import { Chart } from 'chart.js';
 
 @Component({
@@ -8,12 +8,21 @@ import { Chart } from 'chart.js';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-
   chart: Chart;
   name = 'Angular 5 chartjs';
+  masterDivWidth;
+  bgColor;
 
   ngOnInit() {
-    this.chart = new Chart('canvas', {
+   this.createChartBasic();
+   this.masterDivWidth = '100%';
+   this.bgColor = 'red';
+   this.masterDivWidth = '1%';
+   this.masterDivWidth = '100%';
+  }
+
+  createChartBasic(){
+     this.chart = new Chart('canvas', {
       type: 'doughnut',
       data: {
         labels: ['Solicitado', 'Entregado', 'Faltante'],
