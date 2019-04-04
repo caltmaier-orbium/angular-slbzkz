@@ -18,6 +18,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { MyTableChartComponent } from './my-table-chart/my-table-chart.component';
 import { ChartComponent } from './chart/chart.component';
 import { DynTableChartComponent } from './dyn-table-chart/dyn-table-chart.component';
+import { DynChartTableRespComponent } from './dyn-chart-table-resp/dyn-chart-table-resp.component';
 
 const routes: Routes = [
   {path: 'bar-chart', component: MyBarChartComponent},
@@ -39,7 +40,7 @@ const routes: Routes = [
     ReactiveFormsModule,
     BrowserAnimationsModule,
      ],
-  declarations: [ AppComponent, HelloComponent, MyBarChartComponent, MyDoughnutChartComponent, MyTableComponent, MyTableChartComponent, ChartComponent, DynTableChartComponent ],
+  declarations: [ AppComponent, HelloComponent, MyBarChartComponent, MyDoughnutChartComponent, MyTableComponent, MyTableChartComponent, ChartComponent, DynTableChartComponent, DynChartTableRespComponent ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }

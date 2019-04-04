@@ -6,7 +6,6 @@ export interface PeriodicElement {
   position: number;
   weight: number;
   symbol: string;
- // chart: Component;
 }
 
 const ELEMENT_DATA: PeriodicElement[] = [

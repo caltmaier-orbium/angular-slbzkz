@@ -3,8 +3,8 @@ import {MatSort, MatTableDataSource} from '@angular/material';
 import { MyDoughnutChartComponent } from '../my-doughnut-chart/my-doughnut-chart.component';
 import {MyBarChartComponent} from '../my-bar-chart/my-bar-chart.component';
 import {Chart} from 'chart.js';
-import {MasterDataChart} from '../models';
-import {PeriodicElementChartData} from '../models';
+import {MasterDataChart} from '../chart/chart.component';
+import {PeriodicElement} from '../models'
 
 const CHART_DATA: MasterDataChart = { 
   chartType: 'bar', 
@@ -41,7 +41,7 @@ const CHART_DATA2: MasterDataChart = {
                   responsive: true }
 };
 
-const ELEMENT_DATA: PeriodicElementChartData[] = [
+const ELEMENT_DATA: PeriodicElement[] = [
   {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H', chartData: CHART_DATA},
   {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He', chartData: CHART_DATA1},
   {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li', chartData: CHART_DATA2}
@@ -49,11 +49,11 @@ const ELEMENT_DATA: PeriodicElementChartData[] = [
 
 
 @Component({
-  selector: 'app-dyn-table-chart',
-  templateUrl: './dyn-table-chart.component.html',
-  styleUrls: ['./dyn-table-chart.component.css']
+  selector: 'app-dyn-chart-table-resp',
+  templateUrl: './dyn-chart-table-resp.component.html',
+  styleUrls: ['./dyn-chart-table-resp.component.css']
 })
-export class DynTableChartComponent implements OnInit {
+export class DynChartTableRespComponent implements OnInit {
 
   public dataForChart = CHART_DATA;
 

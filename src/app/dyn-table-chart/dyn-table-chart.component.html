@@ -1,5 +1,4 @@
 <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
-
   <!-- Position Column -->
   <ng-container matColumnDef="position">
     <th mat-header-cell *matHeaderCellDef mat-sort-header> No. </th>
@@ -23,14 +22,7 @@
     <th mat-header-cell *matHeaderCellDef mat-sort-header> Symbol </th>
     <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
   </ng-container>
-
-  <!-- Symbol Column 
-  <ng-container matColumnDef="chart">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header> Chart </th>
-    <td mat-cell *matCellDef="let element">{{element.chart}}</td>
-  </ng-container>-->
-
-  <!-- so funktioniert es, aber non dynamic -->
+  
   <!-- Symbol Column -->
   <ng-container matColumnDef="chart">
     <th mat-header-cell *matHeaderCellDef mat-sort-header> Chart </th>
