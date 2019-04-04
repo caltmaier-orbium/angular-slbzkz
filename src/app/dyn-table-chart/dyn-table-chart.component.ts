@@ -26,7 +26,7 @@ const CHART_DATA: MasterDataChart = {
 };
 
 const CHART_DATA1: MasterDataChart = { 
-  chartType: 'bar', 
+  chartType: 'doughnut', 
   chartLabels: ['2006', '2007', '2008', '2009', '2010', '2011', '2012'], 
   chartLegendEnabled: false, 
   chartData:  [
@@ -38,12 +38,11 @@ const CHART_DATA1: MasterDataChart = {
 };
 
 const CHART_DATA2: MasterDataChart = { 
-  chartType: 'bar', 
-  chartLabels: ['2006', '2007', '2008', '2009', '2010', '2011', '2012'], 
+  chartType: 'pie', 
+  chartLabels: ['2006', '2007', '2008', '2009'], 
   chartLegendEnabled: false, 
   chartData:  [
-                {data: [65, 59, 80, 81, 56, 55, 40], label: 'Successful'},
-                {data: [28, 48, 40, 19, 86, 27, 90], label: 'Error'}
+                {data: [65, 59, 80, 81]}
               ],
   chartOptions: { scaleShowVerticalLines: false,
                   responsive: true }

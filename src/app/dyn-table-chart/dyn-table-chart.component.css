@@ -25,5 +25,6 @@ body {
 .chartWrapperTd {
   width: 55%;
   height: 65%;
-  background-color: gray;
+  padding-top: 1em;
+  padding-bottom: 1em;
 }
