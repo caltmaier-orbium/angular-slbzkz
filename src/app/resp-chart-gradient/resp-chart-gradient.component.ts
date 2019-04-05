@@ -9,7 +9,7 @@ import {DataService} from '../data.service'
   templateUrl: './resp-chart-gradient.component.html',
   styleUrls: ['./resp-chart-gradient.component.css']
 })
-export class RespChartGradientComponent implements OnInit {
+export class RespChartGradientComponent {
   public dataService: DataService = new DataService;
 
   ELEMENT_DATA;

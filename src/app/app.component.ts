@@ -14,7 +14,7 @@ export class AppComponent implements OnInit {
   bgColor;
 
   ngOnInit() {
-   this.createChartBasic();
+ //  this.createChartBasic();
   }
 
   createChartBasic(){
