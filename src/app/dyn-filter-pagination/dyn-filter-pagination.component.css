@@ -4,8 +4,17 @@
       vertical-align: middle
     }
 
+    .mat-form-field {
+      font-size: 14px;
+      width: 100%;
+    }
+
     .mat-table caption {
       font-size: 1em;
+    }
+    
+    mat-table {
+      width: 100%;
     }
     
     /*  Enable this to hide header
@@ -63,6 +72,11 @@
     margin-left: 1em;
     }
 
+  .mat-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+
   @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 }
 
@@ -71,6 +85,10 @@
   table {
     width: 100%;
   }
+
+  mat-table {
+      width: 100%;
+    }
 
   th.mat-sort-header-sorted {
     color: black;
@@ -105,12 +123,13 @@
     margin-bottom: 0.1em;
   }
 
-  .matCellChart {
-      /* */
-  }
-
   .matCellSymbol{
     background-color: aqua;
-    
+    width: 10px !important;
+  }
+
+  .mat-form-field {
+  font-size: 14px;
+  width: 100%;
   }
 }

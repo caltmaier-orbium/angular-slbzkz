@@ -10,20 +10,26 @@ import {DataService} from '../data.service'
   styleUrls: ['./dyn-filter-pagination.component.css']
 })
 export class DynFilterPaginationComponent implements OnInit {
-public dataService: DataService = new DataService;
+  public dataService: DataService = new DataService;
 
   ELEMENT_DATA;
-
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol', 'chart'];
-
   dataSource; 
-
+  @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort, {static: true}) sort: MatSort;
 
   ngOnInit() {
     this.ELEMENT_DATA = this.dataService.getMockDataElement();
     this.dataSource = new MatTableDataSource(this.ELEMENT_DATA);
     this.dataSource.sort = this.sort;
+  }
+
+  applyFilter(filterValue: string) {
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+
+    if (this.dataSource.paginator) {
+      this.dataSource.paginator.firstPage();
+    }
   }
 
 }
