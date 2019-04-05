@@ -28,12 +28,21 @@ export class GradientChartComponent implements OnInit {
     this.chartOptions = this.masterData.chartOptions;
 
       // in ngOnInit
-    const gradient = this.canvas.nativeElement.getContext('2d').createLinearGradient(0, 0, 0, 200);
+    const gradient = this.canvas.nativeElement.getContext('2d').createLinearGradient(0, 0, 0, 250);
     gradient.addColorStop(0, this.colorsForGradient[0]);
     gradient.addColorStop(1, this.colorsForGradient[1]);
+
+    const gradientScnd = this.canvas.nativeElement.getContext('2d').createLinearGradient(0, 0, 0, 200);
+
+    gradientScnd.addColorStop(0, this.colorsForGradient[2]);
+    gradientScnd.addColorStop(1, this.colorsForGradient[3]);
+
     this.chartColors = [
         {
             backgroundColor: gradient
+        },
+        {
+          backgroundColor: gradientScnd
         }
     ];
   }
