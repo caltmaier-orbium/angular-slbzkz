@@ -33,10 +33,13 @@ export class MyTableChartComponent implements OnInit {
 
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol', 'chart'];
   dataSource = new MatTableDataSource(ELEMENT_DATA);
+  tableWidth;
 
   @ViewChild(MatSort, {static: true}) sort: MatSort;
 
   ngOnInit() {
     this.dataSource.sort = this.sort;
+    this.tableWidth = '50%';
+    this.tableWidth = '100%';
   }
 }

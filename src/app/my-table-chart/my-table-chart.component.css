@@ -23,7 +23,9 @@ body {
 }
 
 .chartWrapperTd {
-  width: 55%;
-  height: 65%;
+  width: 75%;
+  height: 75%;
   background-color: gray;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
 }

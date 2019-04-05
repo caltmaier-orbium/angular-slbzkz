@@ -1,4 +1,4 @@
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 660px) {
   .mat-table {
     border: 0;
     vertical-align: middle
@@ -56,6 +56,42 @@
     .mat-table .mat-cell:first-child {
     margin-top: 4%;
   }
+  .chartWrapperTd {
+  width: 75%;
+  height: 75%;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
 }
 
-@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+table {
+  width: 100%;
+}
+
+th.mat-sort-header-sorted {
+  color: black;
+}
+
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+body { 
+  font-family: Roboto, Arial, sans-serif;
+  margin: 0;
+}
+
+.basic-container {
+  padding: 30px;
+}
+
+.version-info {
+  font-size: 8pt;
+  float: right;
+}
+
+.appChart {
+  width: 25%;
+  height: 25%;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
