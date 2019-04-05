@@ -22,9 +22,9 @@ body {
   float: right;
 }
 
-.chartWrapper {
+.chartWrapperTd {
   width: 85%;
-  height: 85%;
+  height: 100%;
   margin-top: 0.5em;
   margin-bottom: 0.5em;
 }

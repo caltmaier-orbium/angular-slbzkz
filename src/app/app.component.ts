@@ -15,6 +15,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
    this.createChartBasic();
+   
 /*   this.masterDivWidth = '100%';
    this.bgColor = 'red';
    this.masterDivWidth = '1%';

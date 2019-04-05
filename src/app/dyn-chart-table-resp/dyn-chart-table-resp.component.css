@@ -60,8 +60,9 @@
   .matCellChart{
     height: auto !important;
     margin-bottom: -2.5em !important;
-    margin-left: 1em
+    margin-left: 1em;
     }
+
   @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 }
 
@@ -106,5 +107,10 @@
 
   .matCellChart {
       /* */
+  }
+
+  .matCellSymbol{
+    background-color: aqua;
+    
   }
 }
