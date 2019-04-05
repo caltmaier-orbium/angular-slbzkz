@@ -9,6 +9,7 @@ import {MasterDataChart} from '../model/model.module';
 export class GradientChartComponent implements OnInit {
  
 @Input() public masterData: MasterDataChart;
+@Input() public colorsForGradient: any;
 
   public chartType;
   public chartLabels;
@@ -28,8 +29,8 @@ export class GradientChartComponent implements OnInit {
 
       // in ngOnInit
     const gradient = this.canvas.nativeElement.getContext('2d').createLinearGradient(0, 0, 0, 200);
-    gradient.addColorStop(0, 'blue');
-    gradient.addColorStop(1, 'white');
+    gradient.addColorStop(0, this.colorsForGradient[0]);
+    gradient.addColorStop(1, this.colorsForGradient[1]);
     this.chartColors = [
         {
             backgroundColor: gradient

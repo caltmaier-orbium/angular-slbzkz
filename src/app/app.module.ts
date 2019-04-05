@@ -25,6 +25,7 @@ import { DynFilterPaginationComponent } from './dyn-filter-pagination/dyn-filter
 import { TreeTableComponent } from './tree-table/tree-table.component';
 import { TreetableModule } from 'ng-material-treetable';
 import { GradientChartComponent } from './gradient-chart/gradient-chart.component';
+import { RespChartGradientComponent } from './resp-chart-gradient/resp-chart-gradient.component';
 
 
 const routes: Routes = [
@@ -49,7 +50,7 @@ const routes: Routes = [
     SimpleNotificationsModule.forRoot(),
     TreetableModule
      ],
-  declarations: [ AppComponent, HelloComponent, MyBarChartComponent, MyDoughnutChartComponent, MyTableComponent, MyTableChartComponent, ChartComponent, DynTableChartComponent, DynChartTableRespComponent, DynFilterPaginationComponent, TreeTableComponent, GradientChartComponent ],
+  declarations: [ AppComponent, HelloComponent, MyBarChartComponent, MyDoughnutChartComponent, MyTableComponent, MyTableChartComponent, ChartComponent, DynTableChartComponent, DynChartTableRespComponent, DynFilterPaginationComponent, TreeTableComponent, GradientChartComponent, RespChartGradientComponent ],
   bootstrap:    [ AppComponent ],
   providers: [DataService]
 })
