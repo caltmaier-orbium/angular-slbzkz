@@ -57,6 +57,10 @@
       margin-top: 4%;
     }
 
+    mat-cell:first-of-type {
+      padding-left: 0;
+    }
+
   .matCellChart{
     height: auto !important;
     margin-bottom: -2.5em !important;

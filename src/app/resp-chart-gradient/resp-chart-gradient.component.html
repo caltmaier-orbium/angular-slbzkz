@@ -29,7 +29,7 @@
       <ng-container matColumnDef="chart">
         <mat-header-cell *matHeaderCellDef mat-sort-header> Chart </mat-header-cell>
         <mat-cell class="matCellChart" *matCellDef="let element" data-label="chart">
-          <div class="chartWrapper" style="background-color:white">
+          <div class="chartWrapper">
             <app-gradient-chart class="appChart" [masterData]="element.chartData" [colorsForGradient]="['orange', 'red', '#bdc3c7', '#2c3e50']"></app-gradient-chart>
           </div>
         </mat-cell>
