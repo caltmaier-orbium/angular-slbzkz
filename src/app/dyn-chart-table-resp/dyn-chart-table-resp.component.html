@@ -28,8 +28,8 @@
       <!-- Symbol Column -->
       <ng-container matColumnDef="chart">
         <mat-header-cell *matHeaderCellDef mat-sort-header> Chart </mat-header-cell>
-        <mat-cell style="background-color: gray; height: auto;" *matCellDef="let element" data-label="chart">
-          <div>
+        <mat-cell class="matCellChart" *matCellDef="let element" data-label="chart">
+          <div class="chartWrapper" style="background-color:red">
             <app-chart class="appChart" [masterData]="element.chartData"></app-chart>
           </div>
         </mat-cell>
