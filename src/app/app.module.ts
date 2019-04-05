@@ -22,6 +22,8 @@ import { DynChartTableRespComponent } from './dyn-chart-table-resp/dyn-chart-tab
 import { SimpleNotificationsModule } from 'angular2-notifications';
 import { DataService } from './data.service';
 import { DynFilterPaginationComponent } from './dyn-filter-pagination/dyn-filter-pagination.component';
+import { TreeTableComponent } from './tree-table/tree-table.component';
+import { TreetableModule } from 'ng-material-treetable';
 
 
 const routes: Routes = [
@@ -43,9 +45,10 @@ const routes: Routes = [
     MatNativeDateModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    SimpleNotificationsModule.forRoot()
+    SimpleNotificationsModule.forRoot(),
+    TreetableModule
      ],
-  declarations: [ AppComponent, HelloComponent, MyBarChartComponent, MyDoughnutChartComponent, MyTableComponent, MyTableChartComponent, ChartComponent, DynTableChartComponent, DynChartTableRespComponent, DynFilterPaginationComponent ],
+  declarations: [ AppComponent, HelloComponent, MyBarChartComponent, MyDoughnutChartComponent, MyTableComponent, MyTableChartComponent, ChartComponent, DynTableChartComponent, DynChartTableRespComponent, DynFilterPaginationComponent, TreeTableComponent ],
   bootstrap:    [ AppComponent ],
   providers: [DataService]
 })

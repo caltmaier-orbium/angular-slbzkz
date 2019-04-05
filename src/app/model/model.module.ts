@@ -33,3 +33,16 @@ export interface PeriodicElementChart {
   symbol: string;
   chart: Chart;
 }
+
+export interface Report {
+  name: string;
+  owner: string;
+  protected: boolean;
+  backup: boolean;
+}
+
+export interface Task {
+  name: string;
+  completed: boolean;
+  owner: string;
+}
