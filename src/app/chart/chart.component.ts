@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import {MasterDataChart} from '../model/model.module';
+
 @Component({
   selector: 'app-chart',
   templateUrl: './chart.component.html',
@@ -13,6 +15,7 @@ export class ChartComponent implements OnInit {
   public chartLegendEnabled;
   public chartData;
   public chartOptions;
+  public chartColors;
   
   ngOnInit() {
     this.chartType = this.masterData.chartType;
@@ -21,13 +24,4 @@ export class ChartComponent implements OnInit {
     this.chartData = this.masterData.chartData;
     this.chartOptions = this.masterData.chartOptions;
   }
-}
-
-// Interface bauen
-export interface MasterDataChart {
-  chartType: string;
-  chartLabels: string[];
-  chartLegendEnabled: boolean;
-  chartData: any [];
-  chartOptions: any;    // quuickk&dirty
 }
