@@ -21,6 +21,7 @@ export class DynFilterPaginationComponent implements OnInit {
   ngOnInit() {
     this.ELEMENT_DATA = this.dataService.getMockDataElement();
     this.dataSource = new MatTableDataSource(this.ELEMENT_DATA);
+    this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
   }
 

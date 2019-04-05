@@ -1,49 +1,51 @@
-<mat-form-field>
-  <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
-</mat-form-field>
+<div class="mat-app-background basic-container">
+  <mat-form-field>
+    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+  </mat-form-field>
 
-<div class="container">
-  <div class="example-container mat-elevation-z8">
-    <mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
-      <!-- Position Column -->
-      <ng-container matColumnDef="position">
-        <mat-header-cell *matHeaderCellDef mat-sort-header> No. </mat-header-cell>
-        <mat-cell *matCellDef="let element" data-label="position"> {{element.position}} </mat-cell>
-      </ng-container>
+  <div class="container">
+    <div class="example-container mat-elevation-z8">
+      <mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+        <!-- Position Column -->
+        <ng-container matColumnDef="position">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> No. </mat-header-cell>
+          <mat-cell *matCellDef="let element" data-label="position"> {{element.position}} </mat-cell>
+        </ng-container>
 
-      <!-- Name Column -->
-      <ng-container matColumnDef="name">
-        <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
-        <mat-cell *matCellDef="let element" data-label="name"> {{element.name}} </mat-cell>
-      </ng-container>
+        <!-- Name Column -->
+        <ng-container matColumnDef="name">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
+          <mat-cell *matCellDef="let element" data-label="name"> {{element.name}} </mat-cell>
+        </ng-container>
 
-      <!-- Weight Column -->
-      <ng-container matColumnDef="weight">
-        <mat-header-cell *matHeaderCellDef mat-sort-header> Weight </mat-header-cell>
-        <mat-cell *matCellDef="let element" data-label="weight"> {{element.weight}} </mat-cell>
-      </ng-container>
+        <!-- Weight Column -->
+        <ng-container matColumnDef="weight">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> Weight </mat-header-cell>
+          <mat-cell *matCellDef="let element" data-label="weight"> {{element.weight}} </mat-cell>
+        </ng-container>
 
-      <!-- Symbol Column -->
-      <ng-container matColumnDef="symbol">
-        <mat-header-cell *matHeaderCellDef mat-sort-header> Symbol </mat-header-cell>
-        <mat-cell class="matCellSymbol" *matCellDef="let element" data-label="symbol"> {{element.symbol}} </mat-cell>
-      </ng-container>
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="symbol">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> Symbol </mat-header-cell>
+          <mat-cell class="matCellSymbol" *matCellDef="let element" data-label="symbol"> {{element.symbol}} </mat-cell>
+        </ng-container>
 
-      <!-- Symbol Column -->
-      <ng-container matColumnDef="chart">
-        <mat-header-cell *matHeaderCellDef mat-sort-header> Chart </mat-header-cell>
-        <mat-cell class="matCellChart" *matCellDef="let element" data-label="chart">
-          <div class="chartWrapper" style="background-color:red">
-            <app-chart class="appChart" [masterData]="element.chartData"></app-chart>
-          </div>
-        </mat-cell>
-      </ng-container>
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="chart">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> Chart </mat-header-cell>
+          <mat-cell class="matCellChart" *matCellDef="let element" data-label="chart">
+            <div class="chartWrapper" style="background-color:red">
+              <app-chart class="appChart" [masterData]="element.chartData"></app-chart>
+            </div>
+          </mat-cell>
+        </ng-container>
 
-      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-      <mat-row *matRowDef="let row; columns: displayedColumns;">
-      </mat-row>
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;">
+        </mat-row>
 
-      <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
-    </mat-table>
+        <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+      </mat-table>
+    </div>
   </div>
 </div>
