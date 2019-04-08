@@ -5,3 +5,5 @@
 body {
   background-image: radial-gradient(circle, rgb(172, 172, 172), rgb(99, 99, 99)) !important;
 }
+
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
