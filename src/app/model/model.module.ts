@@ -37,7 +37,7 @@ export interface PeriodicElementChart {
 export interface Report {
   name: string;
   owner: string;
-  protected: boolean;
+  protected: MasterDataChart;
   backup: boolean;
 }
 

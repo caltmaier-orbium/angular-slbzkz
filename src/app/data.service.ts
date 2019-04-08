@@ -149,7 +149,7 @@ export class DataService {
     value: {
       name: 'Reports',
       owner: 'Eric',
-      protected: true,
+      protected: this.getMockDataBar(),
       backup: true
     },
     children: [

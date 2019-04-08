@@ -22,5 +22,8 @@ public dataService: DataService = new DataService;
 singleRootTree: Node<Report> = this.dataService.getMockDataTreeReport();
 arrayOfNodesTree: Node<Task>[] = this.dataService.getMockDataTreeTasks();
 
+logNode(node: Node<Report>) {
+    console.log(node);
+  }
 
 }
