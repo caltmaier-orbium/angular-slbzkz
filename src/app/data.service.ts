@@ -32,7 +32,25 @@ export class DataService {
                         {data: [28, 48, 40, 19, 86, 27, 90], label: 'Series B'}
                       ],
           chartOptions: { scaleShowVerticalLines: false,
-                      responsive: true }
+                      responsive: true,
+                      scales: {
+      xAxes: [{
+        ticks: {
+          fontColor: 'whitesmoke',  // x axe labels (can be hexadecimal too)
+        },
+        gridLines: {
+          color: '#909090'  // grid line color (can be removed or changed)
+        }
+      }],
+      yAxes: [{
+        ticks: {
+          fontColor: 'whitesmoke',  // y axes numbers color (can be hexadecimal too)
+        },
+        gridLines: {
+          color: '#909090'  // grid line color (can be removed or changed)
+        },
+      }]
+    }, }
       };
   };
 

@@ -1,3 +1,7 @@
 /* Add application styles & imports to this file! */
 
 @import '~bootstrap/dist/css/bootstrap.min.css'; 
+
+body {
+  background-image: radial-gradient(circle, rgb(172, 172, 172), rgb(99, 99, 99)) !important;
+}

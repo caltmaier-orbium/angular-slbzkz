@@ -1,4 +1,4 @@
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 700px) {
     .mat-table {
       border: 0;
       vertical-align: middle;
@@ -83,7 +83,7 @@
   @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 }
 
-@media screen and (min-width: 1001px) {
+@media screen and (min-width: 701px) {
 
   table {
     width: 100%;
@@ -120,6 +120,29 @@
     height: 100%;
     margin-top: 0.1em;
     margin-bottom: 0.1em;
+  }
+
+  
+      /*  set width of columns */
+
+  .mat-column-position {
+    flex: 0 0 15%;
+  }
+
+  .mat-column-name {
+    flex: 0 0 15%;
+  }
+
+  .mat-column-weight {
+    flex: 0 0 15%;
+  }
+
+  .mat-column-symbol {
+    flex: 0 0 15%;
+  }
+
+  .mat-column-chart {
+    flex: 0 0 30%;
   }
 
   mat-table {

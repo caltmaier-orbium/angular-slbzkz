@@ -1,4 +1,4 @@
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 700px) {
     .mat-table {
       border: 0;
       vertical-align: middle;
@@ -83,21 +83,24 @@
   @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 }
 
-@media screen and (min-width: 801px) {
+@media screen and (min-width: 701px) {
 
   table {
     width: 100%;
   }
 
   th.mat-sort-header-sorted {
-    color: black;
-    font-color: rgb(179, 179, 179);
+    color: black; 
   }
 
   .mat-cell .mat-header-cell {
     width: auto;
     height: auto;
   }
+
+  .mat-table .mat-cell {
+      color: whitesmoke;
+    }
 
   @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 
@@ -130,27 +133,23 @@
       /*  set width of columns */
 
   .mat-column-position {
-    flex: 0 0 12.5%;
+    flex: 0 0 15%;
   }
 
   .mat-column-name {
-    flex: 0 0 12.5%;
+    flex: 0 0 15%;
   }
 
   .mat-column-weight {
-    flex: 0 0 12.5%;
+    flex: 0 0 15%;
   }
 
   .mat-column-symbol {
-    flex: 0 0 12.5%;
+    flex: 0 0 15%;
   }
 
   .mat-column-chart {
     flex: 0 0 30%;
-  }
-
-  .mat-cell .chartWrapper {
-  /* max-height: 30px !important; */
   }
 }
 
@@ -159,6 +158,7 @@
   display: flex;
   flex-direction: column;
   min-width: 300px;
+  background-image: radial-gradient(circle, rgb(99, 99, 99), rgb(172, 172, 172)) !important;
 }
 
 .example-header {
@@ -169,10 +169,15 @@
 .mat-form-field {
   font-size: 14px;
   width: 100%;
+  
 }
 
 .basic-container {
   padding: 5px;
+}
+
+mat-paginator {
+  background-image: radial-gradient(circle, rgb(99, 99, 99), rgb(172, 172, 172)) !important;
 }
 
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
