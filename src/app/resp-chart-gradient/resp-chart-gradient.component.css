@@ -98,6 +98,17 @@
     height: auto;
   }
 
+  .mat-table .mat-cell {
+      color: whitesmoke;
+    }
+    .mat-table .mat-cell:before {
+      /*
+      * aria-label has no advantage, it won't be read inside a table
+      content: attr(aria-label);
+      */
+      color: whitesmoke;
+    }
+
   @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 
   .basic-container {

@@ -21,11 +21,12 @@ export class RespPagFilterComponent {
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
+  @ViewChild('filterInput') filterInput: HTMLElement;
 
    ngOnInit() {    
     this.ELEMENT_DATA = this.dataService.getMockDataElement();
     this.dataSource = new MatTableDataSource(this.ELEMENT_DATA);
-  }
+   }
 
   /**
    * Set the paginator and sort after the view init since this component will
@@ -41,5 +42,4 @@ export class RespPagFilterComponent {
     filterValue = filterValue.toLowerCase(); // Datasource defaults to lowercase matches
     this.dataSource.filter = filterValue;
   }
-
 }

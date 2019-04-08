@@ -20,6 +20,7 @@
       width: 1px;
     }
     */
+
     .mat-table .mat-row {
       border-bottom: 5px solid #ddd;
       display: block;
@@ -122,8 +123,8 @@
   .chartWrapper {
     width: 100%;
     height: 100%;
-    margin-top: 0.1em;
-    margin-bottom: 0.1em;
+    margin-top: 1em;
+    margin-bottom: 1em;
   }
 
   mat-table {

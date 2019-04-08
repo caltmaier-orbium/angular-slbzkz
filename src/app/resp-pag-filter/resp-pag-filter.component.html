@@ -1,13 +1,11 @@
 <div class="container">
   <div class="example-header">
     <mat-form-field>
-      <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+      <input #filterInput matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
     </mat-form-field>
   </div>  
+  <mat-paginator [pageSizeOptions]="[1, 2, 3, 5]"></mat-paginator>
   <div class="mat-elevation-z8">
-    <div class="wrapper">
-    <mat-paginator [pageSizeOptions]="[1, 2, 3, 5]"></mat-paginator>
-    </div>
     <mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
       <!-- Position Column -->
       <ng-container matColumnDef="position">
