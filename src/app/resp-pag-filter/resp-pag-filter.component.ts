@@ -19,12 +19,27 @@ export class RespPagFilterComponent {
 
   dataSource; 
 
-  @ViewChild(MatSort, {static: true}) sort: MatSort;
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatSort) sort: MatSort;
 
    ngOnInit() {    
     this.ELEMENT_DATA = this.dataService.getMockDataElement();
     this.dataSource = new MatTableDataSource(this.ELEMENT_DATA);
+  }
+
+  /**
+   * Set the paginator and sort after the view init since this component will
+   * be able to query its view for the initialized paginator and sort.
+   */
+  ngAfterViewInit() {
+    this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
+  }
+
+  applyFilter(filterValue: string) {
+    filterValue = filterValue.trim(); // Remove whitespace
+    filterValue = filterValue.toLowerCase(); // Datasource defaults to lowercase matches
+    this.dataSource.filter = filterValue;
   }
 
 }
