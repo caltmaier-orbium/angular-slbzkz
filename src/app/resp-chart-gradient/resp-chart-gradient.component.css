@@ -37,6 +37,7 @@
       height:30px;
       margin-bottom: 4%;
       padding-right: 1em;
+      color: whitesmoke;
     }
     .mat-table .mat-cell:before {
       /*
@@ -49,6 +50,7 @@
       font-weight: normal;
       padding-left: 1em;
       font-size: .85em;
+      color: rgb(22, 22, 22);
     }
     .mat-table .mat-cell:last-child {
       border-bottom: 0;
@@ -76,7 +78,6 @@
 
   mat-table {
     background-image: radial-gradient(circle, rgb(99, 99, 99), rgb(172, 172, 172)) !important;
-    color: white !important;
   }
 
   @import "~@angular/material/prebuilt-themes/indigo-pink.css";
