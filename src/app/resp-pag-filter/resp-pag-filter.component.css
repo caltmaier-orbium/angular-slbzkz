@@ -126,6 +126,28 @@
   mat-table {
     background-image: radial-gradient(circle, rgb(99, 99, 99), rgb(172, 172, 172)) !important;
   }
+
+      /*  set width of columns */
+
+  .mat-column-position {
+    flex: 0 0 10%;
+  }
+
+  .mat-column-name {
+    flex: 0 0 10%;
+  }
+
+  .mat-column-weight {
+    flex: 0 0 10%;
+  }
+
+  .mat-column-symbol {
+    flex: 0 0 10%;
+  }
+
+  .mat-column-chart {
+    flex: 0 0 50%;
+  }
 }
 
 /* Pagination and Filter */
@@ -151,3 +173,4 @@
 
 
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
