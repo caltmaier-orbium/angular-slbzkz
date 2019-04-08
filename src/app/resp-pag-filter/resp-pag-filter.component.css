@@ -1,7 +1,7 @@
 @media screen and (max-width: 1000px) {
     .mat-table {
       border: 0;
-      vertical-align: middle
+      vertical-align: middle;
     }
 
     .mat-table caption {
@@ -37,6 +37,7 @@
       height:30px;
       margin-bottom: 4%;
       padding-right: 1em;
+      color: whitesmoke;
     }
     .mat-table .mat-cell:before {
       /*
@@ -49,6 +50,7 @@
       font-weight: normal;
       padding-left: 1em;
       font-size: .85em;
+      color: rgb(22, 22, 22);
     }
     .mat-table .mat-cell:last-child {
       border-bottom: 0;
@@ -57,7 +59,7 @@
       margin-top: 4%;
     }
 
-  mat-cell:first-of-type {
+    mat-cell:first-of-type {
       padding-left: 0;
     }
 
@@ -74,6 +76,10 @@
     margin-left: 0.2em;
   }
 
+  mat-table {
+    background-image: radial-gradient(circle, rgb(99, 99, 99), rgb(172, 172, 172)) !important;
+  }
+
   @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 }
 
@@ -85,6 +91,7 @@
 
   th.mat-sort-header-sorted {
     color: black;
+    font-color: rgb(179, 179, 179);
   }
 
   .mat-cell .mat-header-cell {
@@ -115,4 +122,27 @@
     margin-top: 0.1em;
     margin-bottom: 0.1em;
   }
+
+  mat-table {
+    background-image: radial-gradient(circle, rgb(99, 99, 99), rgb(172, 172, 172)) !important;
+  }
+}
+
+
+
+/* Pagination and Filter */
+.example-container {
+  display: flex;
+  flex-direction: column;
+  min-width: 300px;
+}
+
+.example-header {
+  min-height: 64px;
+  padding: 8px 24px 0;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
 }

@@ -21,6 +21,7 @@ import { TreeTableComponent } from './tree-table/tree-table.component';
 import { TreetableModule } from 'ng-material-treetable';
 import { GradientChartComponent } from './gradient-chart/gradient-chart.component';
 import { RespChartGradientComponent } from './resp-chart-gradient/resp-chart-gradient.component';
+import { RespPagFilterComponent } from './resp-pag-filter/resp-pag-filter.component';
 
 @NgModule({
   imports:      [ 
@@ -35,7 +36,7 @@ import { RespChartGradientComponent } from './resp-chart-gradient/resp-chart-gra
     SimpleNotificationsModule.forRoot(),
     TreetableModule
      ],
-  declarations: [ AppComponent, HelloComponent, ChartComponent, DynTableChartComponent, DynChartTableRespComponent, TreeTableComponent, GradientChartComponent, RespChartGradientComponent ],
+  declarations: [ AppComponent, HelloComponent, ChartComponent, DynTableChartComponent, DynChartTableRespComponent, TreeTableComponent, GradientChartComponent, RespChartGradientComponent, RespPagFilterComponent ],
   bootstrap:    [ AppComponent ],
   providers: [DataService]
 })

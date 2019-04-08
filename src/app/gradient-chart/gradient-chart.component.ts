@@ -18,6 +18,11 @@ export class GradientChartComponent implements OnInit {
   public chartOptions;
   public chartColors;
 
+  _borderWidth: number = 2;
+  _borderColor: string = 'rgb(179, 179, 179)';
+  _hoverBorderWidth: number = 2;
+  _hoverBorderColor: string = 'white';
+
   @ViewChild("chartCanvas") canvas: ElementRef;
  
   ngOnInit() {
@@ -36,13 +41,21 @@ export class GradientChartComponent implements OnInit {
 
     gradientScnd.addColorStop(0, this.colorsForGradient[2]);
     gradientScnd.addColorStop(1, this.colorsForGradient[3]);
-
+  
     this.chartColors = [
         {
-            backgroundColor: gradient
+            backgroundColor: gradient,
+            borderWidth: this._borderWidth,
+            borderColor: this._borderColor,
+            hoverBorderWidth: this._hoverBorderWidth,
+            hoverBorderColor: this._hoverBorderColor
         },
         {
-          backgroundColor: gradientScnd
+          backgroundColor: gradientScnd,
+          borderWidth: this._borderWidth,
+          borderColor: this._borderColor,
+          hoverBorderWidth: this._hoverBorderWidth,
+          hoverBorderColor: this._hoverBorderColor
         }
     ];
   }
