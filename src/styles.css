@@ -1,4 +1,5 @@
 /* Add application styles & imports to this file! */
+@import url( 'https://fonts.googleapis.com/css?family=Roboto:400,700|Material+Icons');
 
 @import '~bootstrap/dist/css/bootstrap.min.css'; 
 
