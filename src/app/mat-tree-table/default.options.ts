@@ -1,4 +1,4 @@
-import { Options } from './models';
+import { Options } from '../model/model.component';
 
 export const defaultOptions: Options<any> = {
   verticalSeparator: true,
