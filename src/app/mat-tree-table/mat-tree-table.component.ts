@@ -1,13 +1,13 @@
-import { Component, OnInit, Input, Output, ElementRef } from '@angular/core';
+import { Component, OnInit, Input, Output, ElementRef, ViewChild } from '@angular/core';
 import { Node, TreeTableNode, Options, SearchableNode } from '../model/model.module';
 import { TreeService } from './services/tree/tree.service';
-import { MatTableDataSource } from '@angular/material';
 import { ValidatorService } from './services/validator/validator.service';
 import { ConverterService } from './services/converter/converter.service';
 import { defaultOptions } from './default.options';
 import * as _ from 'lodash';
 import { Required } from './decorators/required.decorator';
 import { Subject } from 'rxjs';
+import {MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
 
 @Component({
   selector: 'app-mat-tree-table',
@@ -23,6 +23,10 @@ export class MatTreeTableComponent implements OnInit {
   private treeTable: TreeTableNode<T>[];
   displayedColumns: string[];
   dataSource: MatTableDataSource<TreeTableNode<T>>;
+
+  /* Paginator and Filter */
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatSort) sort: MatSort;
   
   constructor(
     private treeService: TreeService,
@@ -52,6 +56,9 @@ export class MatTreeTableComponent implements OnInit {
     const treeTableTree = this.searchableTree.map(st => this.converterService.toTreeTableTree(st));
     this.treeTable = _.flatMap(treeTableTree, this.treeService.flatten);
     this.dataSource = this.generateDataSource();
+
+    /* make dataSource sortable */
+    this.dataSource.sort = this.sort;
   }
 
   extractNodeProps(tree: Node<T> & { value: { [k: string]: any } }): string[] {
@@ -84,4 +91,15 @@ export class MatTreeTableComponent implements OnInit {
     return _.defaults(this.options, defaultOpts);
   }
 
+  /* Paginator and Filter */
+  ngAfterViewInit() {
+    this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
+  }
+
+  applyFilter(filterValue: string) {
+    filterValue = filterValue.trim(); // Remove whitespace
+    filterValue = filterValue.toLowerCase(); // Datasource defaults to lowercase matches
+    this.dataSource.filter = filterValue;
+  }
 }

@@ -21,7 +21,6 @@ export class RespPagFilterComponent {
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
-  @ViewChild('filterInput') filterInput: HTMLElement;
 
    ngOnInit() {    
     this.ELEMENT_DATA = this.dataService.getMockDataElement();
