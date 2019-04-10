@@ -26,3 +26,9 @@
   <tr mat-row [ngClass]="{'highlight-on-hover': options.highlightRowOnHover}" *matRowDef="let row; columns: displayedColumns;"></tr>
 
 </table>
+
+<treetable
+  [tree]="singleRootTree"
+  [options]="treeOptions"
+  (nodeClicked)="logNode($event)">
+</treetable>

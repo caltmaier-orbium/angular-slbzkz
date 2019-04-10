@@ -6,7 +6,7 @@ import { ValidatorService } from './services/validator/validator.service';
 import { ConverterService } from './services/converter/converter.service';
 import { defaultOptions } from './default.options';
 import * as _ from 'lodash';
-import { Required } from '../decorators/required.decorator';
+import { Required } from './decorators/required.decorator';
 import { Subject } from 'rxjs';
 
 @Component({
