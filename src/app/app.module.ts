@@ -25,6 +25,7 @@ import { RespPagFilterComponent } from './resp-pag-filter/resp-pag-filter.compon
 import { MatTreeTableComponent } from './mat-tree-table/mat-tree-table.component';
 import { TestMatTreeTableComponent } from './test-mat-tree-table/test-mat-tree-table.component';
 import { GradientColorChartComponent } from './gradient-color-chart/gradient-color-chart.component';
+import { ExpTreeComponent } from './exp-tree/exp-tree.component';
 
 @NgModule({
   imports:      [ 
@@ -39,7 +40,7 @@ import { GradientColorChartComponent } from './gradient-color-chart/gradient-col
     SimpleNotificationsModule.forRoot(),
     TreetableModule
      ],
-  declarations: [ AppComponent, HelloComponent, ChartComponent, DynTableChartComponent, DynChartTableRespComponent, TreeTableComponent, GradientChartComponent, RespChartGradientComponent, RespPagFilterComponent, MatTreeTableComponent, TestMatTreeTableComponent, GradientColorChartComponent ],
+  declarations: [ AppComponent, HelloComponent, ChartComponent, DynTableChartComponent, DynChartTableRespComponent, TreeTableComponent, GradientChartComponent, RespChartGradientComponent, RespPagFilterComponent, MatTreeTableComponent, TestMatTreeTableComponent, GradientColorChartComponent, ExpTreeComponent ],
   bootstrap:    [ AppComponent ],
   providers: [DataService]
 })
