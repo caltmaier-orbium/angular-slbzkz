@@ -19,7 +19,7 @@ export class DataService {
     return [
         {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H', chartData: this.CHART_DATA},
         {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He', chartData: this.CHART_DATA1},
-        {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li', chartData: this.CHART_DATA2} ];
+        {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li', chartData: this.CHART_DATA2}];
   }
 
   getMockDataBar(){

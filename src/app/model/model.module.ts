@@ -18,6 +18,16 @@ export interface MasterDataChart {
   chartOptions: any;    // quuickk&dirty
 } 
 
+export interface ChartData {
+  chartType: string;
+  chartLabels: string[];
+  chartLegendEnabled: boolean;
+  chartData: any;
+  chartOptions: any; 
+  colorAsGradient: boolean;
+  chartColors: string[];
+}
+
 export interface PeriodicElementChartData {
   name: string;
   position: number;
