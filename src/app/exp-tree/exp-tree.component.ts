@@ -1,31 +1,6 @@
 import {Component} from '@angular/core';
 import {MatTableDataSource} from '@angular/material';
 
-@Component({
-  selector: 'app-exp-tree',
-  templateUrl: './exp-tree.component.html',
-  styleUrls: ['./exp-tree.component.css']
-})
-export class ExpTreeComponent {
-
-  value1 = '';
-  displayedColumns = ['position', 'name', 'weight', 'symbol'];
-  dataSource = new MatTableDataSource(ELEMENT_DATA);
-  index_iterable = 2;
-
-  applyFilter(filterValue: string) {
-    filterValue = filterValue.trim(); // Remove whitespace
-    filterValue = filterValue.toLowerCase(); // MatTableDataSource defaults to lowercase matches
-    this.dataSource.filter = filterValue;
-  }
-
-  addElement() {
-    ELEMENT_DATA.push({position: this.index_iterable, name: this.value1, weight: 1.0079, symbol: 'H'})
-    this.index_iterable = this.index_iterable + 1;
-    this.dataSource = new MatTableDataSource(ELEMENT_DATA);
-  }
-}
-
 export interface Element {
   name: string;
   position: number;
@@ -55,3 +30,35 @@ const ELEMENT_DATA: Element[] = [
   {parent: ELEMENT_DATA[3], children: null},
   {parent: ELEMENT_DATA[4], children: null},
   ];
+
+@Component({
+  selector: 'app-exp-tree',
+  templateUrl: './exp-tree.component.html',
+  styleUrls: ['./exp-tree.component.css']
+})
+export class ExpTreeComponent {
+
+  value1 = '';
+  displayedColumns = ['position', 'name', 'weight', 'symbol'];
+  dataSource = new MatTableDataSource(ELEMENT_DATA_COLLECTION);
+  index_iterable = 2;
+  printout;
+
+  applyFilter(filterValue: string) {
+    filterValue = filterValue.trim(); // Remove whitespace
+    filterValue = filterValue.toLowerCase(); // MatTableDataSource defaults to lowercase matches
+    this.dataSource.filter = filterValue;
+  }
+
+  addElement() {
+    ELEMENT_DATA.push({position: this.index_iterable, name: this.value1, weight: 1.0079, symbol: 'H'})
+    this.index_iterable = this.index_iterable + 1;
+    this.dataSource = new MatTableDataSource(ELEMENT_DATA_COLLECTION);
+  }
+
+    // pass clicked element
+  onElementClicked(element: ElementData){
+
+    console.log("passed element: " + element.parent.name);
+  }
+}
